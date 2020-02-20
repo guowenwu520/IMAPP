@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.runapp.mapper.TestQuestionMapper" >
+     <select id="getTestQuestions" resultType="com.runapp.bean.TestQuestion">
+             select * from testquestions
+     </select>
+     <select id="getTiTestions"  resultType="com.runapp.bean.Ti">
+              select * from ti where testquestionsid=${testquestionsid}
+     </select>
+     <select id="getShiPings" resultType="com.runapp.bean.ShiPing">
+          select * from shiping
+     </select>
+      <select id="getvillageSing" resultType="com.runapp.bean.TestQuestion">
+        select * from testquestions <if test="str!='8976087'"> where yuyan like &apos;%${str}%&apos; </if> limit ${status},${limit}
+    </select>
+     <select id="getvillageSing2" resultType="com.runapp.bean.ShiPing">
+        select * from shiping <if test="str!='8976087'"> where title like &apos;%${str}%&apos; </if> limit ${status},${limit}
+    </select>
+ <select id="findTotalRecord" resultType="int">
+        select  count(*) from testquestions <if test="str!='8976087'"> where  yuyan like &apos;%${str}%&apos; </if>
+    </select>
+    <select id="findTotalRecord2" resultType="int">
+        select  count(*) from shiping <if test="str!='8976087'"> where  title like &apos;%${str}%&apos; </if>
+    </select>
+ <delete id="deletevillage" >
+        delete from testquestions where <if test="eid!=null">testquestionsid=#{eid}</if>
+    </delete>
+    <delete id="deletevillage2" >
+        delete from shiping where <if test="eid!=null">shipingid=#{eid}</if>
+    </delete>
+     <insert id="insert" parameterType="com.runapp.bean.TestQuestion" >
+    insert into testquestions 
+    values (#{testquestionsid}, #{img}, #{yuyan}, 
+      #{miaoshi})
+  </insert>
+  <insert id="insertZShiping">
+       insert into shiping 
+    values (#{shipingid}, #{shiurl}, #{times}, 
+      #{nicheng},#{useraccount},#{title},#{miaoshu})
+  </insert>
+  <insert id="addTiJuan">
+      insert into ti 
+    values (#{tiid}, #{timu}, #{selecta}, 
+      #{selectb},#{selectc},#{selectd},#{daan},#{jiexi},#{testquestionsid})
+  </insert>
+  
+    <select id="getTis" resultType="com.runapp.bean.Ti">
+        select * from ti where testquestionsid=${testid} <if test="str!='8976087'"> and timu like &apos;%${str}%&apos; </if> limit ${status},${limit}
+    </select>
+    <select id="findTotalTi" resultType="int">
+        select  count(*) from ti where testquestionsid=${testid} <if test="str!='8976087'"> and timu like &apos;%${str}%&apos; </if>
+    </select>
+    <delete id="deleteTi" >
+        delete from ti where <if test="eid!=null">tiid=#{eid}</if>
+    </delete>
+    
+</mapper>
