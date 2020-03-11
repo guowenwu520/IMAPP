@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CalendarView-master.iml" filepath="$PROJECT_DIR$/CalendarView-master.iml" />
+      <module fileurl="file://E:\LearningApp\CalendarView-master\CalendarViewProject.iml" filepath="E:\LearningApp\CalendarView-master\CalendarViewProject.iml" />
+      <module fileurl="file://E:\LearningApp\CalendarView-master\app\app.iml" filepath="E:\LearningApp\CalendarView-master\app\app.iml" />
+      <module fileurl="file://E:\LearningApp\CalendarView-master\calendarview\calendarview.iml" filepath="E:\LearningApp\CalendarView-master\calendarview\calendarview.iml" />
+    </modules>
+  </component>
+</project>

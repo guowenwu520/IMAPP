@@ -1,0 +1,27 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="com.example.read_app.ui.home.bookstore.BookStoreFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/navitor_main_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </android.support.v7.widget.RecyclerView>
+    <View
+        android:id="@+id/count"
+        android:background="#f5efef"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/navitor_main_recycle"/>
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/count"
+        android:id="@+id/nrong_recycle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

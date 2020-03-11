@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.read_app.ui.home.MainActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+>
+
+    <RelativeLayout
+        android:id="@+id/rl_common_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        >
+
+        <com.example.read_app.custom.CircleImageView
+            android:id="@+id/civ_avatar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:src="@mipmap/avatar" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tl_tab_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:tabBackground="@color/nothing"
+            app:tabIndicatorColor="@color/sys_home_tab_select"
+            app:tabIndicatorHeight="1dp"
+            app:tabSelectedTextColor="@color/sys_home_tab_select"
+            app:tabTextColor="@color/sys_word_little"
+            app:tabTextAppearance="@style/TabLayoutTextStyle">
+
+        </android.support.design.widget.TabLayout>
+
+        <ImageView
+            android:id="@+id/iv_search"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:padding="10dp"
+            android:src="@mipmap/search" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_edit_titile"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"/>
+
+       <TextView
+           android:id="@+id/tv_edit_finish"
+           android:layout_width="50dp"
+           android:layout_height="match_parent"
+           android:gravity="center"
+           android:layout_centerInParent="true"
+           android:layout_alignParentRight="true"
+           android:textSize="16sp"
+           android:text="完成"/>
+
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:src="@color/sys_line" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+
+</LinearLayout>
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:background="#fbfbfc">
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:background="#11dbfa"
+            android:layout_height="200dp">
+            <com.example.read_app.custom.CircleImageView
+                android:id="@+id/civ_avatar2"
+                android:onClick="Update_Head"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/avatar" />
+            <TextView
+                android:id="@+id/name"
+                android:layout_below="@+id/civ_avatar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="账号"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/zhu_recycle"
+            android:orientation="vertical"
+            android:layout_below="@+id/rel1"
+            android:background="#fafafa"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+            <RelativeLayout
+                android:id="@+id/pass_min"
+                android:onClick="Update_Pass"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/menu_pass"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修改密码"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="90dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/tuichu"
+                android:onClick="TuiChu"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="65dp">
+                <ImageView
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/menu_tui"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="退出登录"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="90dp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>
